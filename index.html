@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Exercises with Arrays and Looping</title>
-    <script src="js/jquery-1.12.4"></script>
-    <script src="js/boostrap.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8" type="text/css">
@@ -12,11 +12,37 @@
   <body>
     <div class="container">
       <h1>Grocery List</h1>
-      <form id="grocerylist" action="index.html" method="post">
+      <form id="groceryList" action="index.html" method="post">
         <label for="groceryInput">Item</label>
-        <input type="text" name="name" value="">
+        <input type="text" name="name" id="groceryInput">
         <button type="submit" name="button">Add to List</button>
         <button type="button" id="groceryPrint">Print List</button>
+      </form>
+      <ul id="printedList">
+
+      </ul>
+    </div>
+    <div class="container">
+      <form id="sentenceParse" action="index.html" method="post">
+        <label for="sentenceParseInput">type in your favorite sentence</label>
+        <input type="text" name="name" id="sentenceParseInput">
+        <button type="submit" name="button">submit sentence for parsing</button>
+      </form>
+      <p class="parseResult"></p>
+    </div>
+    <div class="container">
+      <h1>Builds a deck of cards</h1>
+      <button type="button" name="button" id="deckBuilder">Build!</button>
+      <button type="button" name="button" id="deckCollapser">Collapse!</button>
+      <ul id="cardDeck">
+      </ul>
+    </div>
+    <div class="container">
+      <h1>Word Frequencies</h1>
+      <form id="textBlock" action="index.html" method="post">
+        <label for="blockInput">BlockInput</label><br>
+        <textarea rows="10" cols="30" id="blockInput"></textarea><br>
+        <button type="submit" name="button">Submit</button>
       </form>
     </div>
   </body>
