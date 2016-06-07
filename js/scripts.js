@@ -29,17 +29,18 @@ suits.forEach(function(suit)  {
     cards.push(rank+" of "+suit);
   });
 });
+var array2={};
 wordOrder = function(textBlock){
   orderedWords = textBlock.split(" ").sort();
-  orderedWords.reduce(function(previousValue, currentValue){
-    if (previousValue === currentValue) {
-      previousValue[currentValue]++;
+  array2 = orderedWords.reduce(function(o,v){
+    if (!o[v]) {
+      o[v]=1;
+    } else{
+      o[v]=o[v]+1;
     }
-    else{
-      previousValue[currentValue]=1
-    }
-    return previousValue
-  });
+    return o;
+  }, {} );
+  return array2;
 }
 
 
@@ -77,7 +78,13 @@ $(document).ready(function(){
   $("#textBlock").submit(function(){
     longText = $("#blockInput").val();
     console.log(longText);
-    alert(wordOrder([1,3,2,4,1,2,3,4,1,3]));
+
+    var output = '';
+    var object1 = wordOrder(longText);
+    for (var property in object1) {
+      output += property + ': ' + object1[property]+'; ';
+    }
+    alert(output);
 
     event.preventDefault();
   });
